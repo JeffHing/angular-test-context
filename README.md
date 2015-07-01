@@ -4,7 +4,7 @@ AngularTestContext provides a simple API for the core ngMock
 capabilities needed for unit testing. Based upon your needs, it can replace 
 the need for ngMock, or it can be used in conjunction with ngMock.
 
-This utility was initially created to make it easier to build unit tests 
+This utility was originally created to make it easier to build unit tests 
 for directives using the [Page Object](https://code.google.com/p/selenium/wiki/PageObjects)
 design pattern.
 
@@ -97,8 +97,9 @@ testContext.inject(function($timer) {
 ```
 ## Page Object Design Pattern
 
-The GitHub project for AngularTestContext contains a "calculator directive" 
-example for writing unit tests using the Page Object design pattern and the 
+The GitHub project for AngularTestContext contains a 
+[calculator directive example](https://github.com/JeffHing/angular-test-context/tree/master/src/calculator)
+for writing unit tests using the Page Object design pattern and the 
 AngularTestContext utility.
 
 If you haven't used the 
@@ -117,8 +118,8 @@ are encapsulated in the Page Object.
 is encapsulated within the Page Object.
 * Since the implementation is encapsulated within the Page Object, tests 
 have the potential to be portable across different frameworks - preserving your 
-investment in tests. Instead of changing your tests for each framework, you 
-would create a different Page Object for each framework.
+investment in tests. Instead of changing your tests for each framework, 
+create a different Page Object for each framework.
 
 ### Calculator Unit Tests
 
@@ -203,7 +204,7 @@ describe('calculator directive:', function() {
 
 ### Calculator Page Object
 
-Here is the Page Object for the calculator directive, that uses the 
+Here is the source code for the `CalculatorPageObject`, that uses the 
 AngularTestContext utility.
 
 ```javascript
