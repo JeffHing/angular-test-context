@@ -1,8 +1,8 @@
 {
     "name": "angular-test-context",
     "main": "./dist/AngularTestContext.js",
-    "version": "0.1.1",
-    "description": "Provides a simple API for the core ngMock capabilities needed for unit testing.",
+    "version": "0.1.2",
+    "description": "Provides a simple API for invoking core ngMock capabilities needed for unit testing.",
     "keywords": [
         "angular",
         "directive",
