@@ -28,7 +28,7 @@ var MODEL = '_calculatorPageObject';
 //-------------------------------------
 
 /*
- * @contructor
+ * @constructor
  */
 function CalculatorPageObject() {
     var m = this[MODEL] = {};

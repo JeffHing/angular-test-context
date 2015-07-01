@@ -74,7 +74,7 @@ var element = testContext.compile('<div my-directive="data"></div>', scope);
 ```
 
 The `compile()` method returns the Angular wrapped DOM element, which you can 
-then inspect during your tests to validate the directive's behavior.
+then be inspected during your tests to validate the directive's behavior.
 
 ### Changing a Scope Value
 
@@ -130,8 +130,8 @@ A couple of points to observe:
 
 * There are no implementation details in the tests. The tests simply execute
 logical calls against the calculator's Page Object.
-* You can't determine what underlying framework is used to implement the 
-calculator.
+* You can't determine from the tests what underlying framework is used to 
+implement the calculator.
 
 **Note:** Abstracting out the underlying framework in your tests may not always
 be feasible, but it's a goal worth considering.
@@ -204,7 +204,7 @@ describe('calculator directive:', function() {
 
 ### Calculator Page Object
 
-Here is the source code for the `CalculatorPageObject`, that uses the 
+Here is the source code for the `CalculatorPageObject`, which uses the 
 AngularTestContext utility.
 
 ```javascript
@@ -234,7 +234,7 @@ var MODEL = '_calculatorPageObject';
 //-------------------------------------
 
 /*
- * @contructor
+ * @constructor
  */
 function CalculatorPageObject() {
     var m = this[MODEL] = {};
