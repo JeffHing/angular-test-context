@@ -1,0 +1,13 @@
+<!-- Copyright 2015. Author: Jeffrey Hing. All Rights Reserved. MIT License. -->
+
+<span class="calc">
+    Calculator
+    <br>
+    <br>
+    <input type="text" ng-model="ctrl.operand1">
+    <input type="text" ng-model="ctrl.operand2">
+    <button ng-click="ctrl.add()" ng-disabled="ctrl.isAddDisabled()">Add</button>
+    <br>
+    <br>
+    Result: <span>{{ctrl.result}}</span>
+</span>
