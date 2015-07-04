@@ -8,7 +8,7 @@
 'use strict';
 
 //-------------------------------------
-// Module dependencies and variables.
+// Module dependencies and variables
 //-------------------------------------
 
 var path = require('path');
@@ -21,7 +21,7 @@ var karmaBaseConf = require('./karma.base.conf');
 module.exports = function(config) {
     var options = karmaBaseConf();
 
-    // Test using this source file
+    // Test using this source file.
     options.webpack.resolve.alias['angular-test-context'] =
         path.join(__dirname, 'src/AngularTestContext.js');
 

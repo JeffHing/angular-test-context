@@ -8,7 +8,7 @@
 'use strict';
 
 //-------------------------------------
-// Module dependencies and variables.
+// Module dependencies and variables
 //-------------------------------------
 
 var path = require('path');
