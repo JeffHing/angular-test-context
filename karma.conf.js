@@ -3,7 +3,7 @@
  *
  * MIT License
  *
- * Karma configuration for testing un-minimized version.
+ * Karma configuration for testing source file.
  */
 'use strict';
 
