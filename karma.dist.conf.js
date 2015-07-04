@@ -23,14 +23,7 @@ module.exports = function(config) {
 
     // Test using this source file
     options.webpack.resolve.alias['angular-test-context'] =
-        path.join(__dirname, 'src/AngularTestContext.js');
-
-    // Lint source file.
-    options.webpack.module.loaders.push({
-        test: /\.js$/,
-        loader: 'eslint-loader',
-        exclude: /node_modules/
-    });
+        path.join(__dirname, 'dist/AngularTestContext.js');
 
     config.set(options);
 };
