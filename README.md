@@ -26,6 +26,7 @@ design pattern.
 ## Features
 
 * Compatible with CommonJS, AMD, and non-module build environments.
+* Can be used in other testing frameworks besides Jasmine and Mocha.
 
 ## Installation
 
@@ -75,7 +76,7 @@ var scope = {
 var element = testContext.compile('<div my-directive="data"></div>', scope);
 ```
 
-The `compile()` method returns the Angular wrapped DOM element, which you can 
+The `compile()` method returns the Angular wrapped DOM element, which can 
 then be inspected during your tests to validate the directive's behavior.
 
 ### Changing a Scope Value
@@ -99,7 +100,7 @@ testContext.inject(function($timer) {
 ```
 ## Page Object Design Pattern
 
-The GitHub project for AngularTestContext contains a 
+AngularTestContext's GitHub project contains a 
 [calculator directive example](https://github.com/JeffHing/angular-test-context/tree/master/src/calculator)
 for writing unit tests using the Page Object design pattern and the 
 AngularTestContext utility.
@@ -107,7 +108,7 @@ AngularTestContext utility.
 If you haven't used the 
 [Page Object](https://code.google.com/p/selenium/wiki/PageObjects)
 design pattern for writing unit tests, I highly recommend it. It will transform
-your tests from being unwieldy and fragile, to being a well managed suite of 
+your tests from being unwieldy and fragile, to being a well-managed suite of
 tests for your code.
 
 The main benefits are:
@@ -225,10 +226,10 @@ module.exports = CalculatorPageObject;
 // Module dependencies and variables
 //-------------------------------------
 
-var AngularTestContext = require('AngularTestContext');
+var AngularTestContext = require('angular-test-context');
 var calculatorDirective = require('./calculator.directive');
 
-// Privte model name.
+// Private model name.
 var MODEL = '_calculatorPageObject';
 
 //-------------------------------------
