@@ -3,7 +3,7 @@
  *
  * MIT License
  *
- * Webpack configuration for un-minimized distribution.
+ * Webpack configuration for non-minimized distribution.
  */
 'use strict';
 
