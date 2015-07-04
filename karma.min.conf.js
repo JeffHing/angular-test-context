@@ -22,7 +22,7 @@ module.exports = function(config) {
     var options = karmaBaseConf();
 
     // Test using this source file
-    options.webpack.resolve.alias.AngularTestContext =
+    options.webpack.resolve.alias['angular-test-context'] =
         path.join(__dirname, 'dist/AngularTestContext.min.js');
 
     config.set(options);

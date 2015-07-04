@@ -9,7 +9,7 @@
 // Module dependencies
 //----------------------------------
 
-var AngularTestContext = require('AngularTestContext');
+var AngularTestContext = require('angular-test-context');
 
 //----------------------------------
 // Unit Tests

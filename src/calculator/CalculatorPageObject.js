@@ -17,10 +17,10 @@ module.exports = CalculatorPageObject;
 // Module dependencies and variables
 //-------------------------------------
 
-var AngularTestContext = require('AngularTestContext');
+var AngularTestContext = require('angular-test-context');
 var calculatorDirective = require('./calculator.directive');
 
-// Privte model name.
+// Private model name.
 var MODEL = '_calculatorPageObject';
 
 //-------------------------------------
