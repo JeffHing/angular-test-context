@@ -1,4 +1,4 @@
-### 0.1.5 (2015-07-01)
+### 0.1.5 (2015-07-12)
 * Normalize webpack and karma configurations across projects.
 * Normalize directive naming across projects.
 * Test with Angular 1.2.x.
