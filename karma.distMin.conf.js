@@ -8,22 +8,17 @@
 'use strict';
 
 //-------------------------------------
-// Module dependencies and variables
+// Module dependencies and variables.
 //-------------------------------------
 
-var path = require('path');
-var karmaBaseConf = require('./karma.base.conf');
+var common = require('./karma.common');
 
 //-------------------------------------
 // Module exports
 //-------------------------------------
 
 module.exports = function(config) {
-    var options = karmaBaseConf();
-
-    // Test using this source file
-    options.webpack.resolve.alias['angular-test-context'] =
-        path.join(__dirname, 'dist/AngularTestContext.min.js');
-
-    config.set(options);
+    config.set(
+        common('dist/AngularTestContext.min.js')
+    );
 };

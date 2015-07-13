@@ -3,12 +3,7 @@
  *
  * MIT License
  *
- * A function which returns the karma configuration merged
- * with the provided options.
- *
- * @example
- *    var karmaBaseConf = require('./karma.base.conf.js);
- *    config.set(karmaBaseConf({...});
+ * Common karma configuration values.
  */
 'use strict';
 
@@ -16,23 +11,31 @@
 // Module dependencies and variables
 //-------------------------------------
 
-var extend = require('extend');
+var path = require('path');
 var karmaWebpackPlugin = require('karma-webpack');
+var webpackCommon = require('./webpack.common');
 
 //-------------------------------------
 // Module exports
 //-------------------------------------
 
-module.exports = function(options) {
+/*
+ * @param {string} sourceFile The source file to test
+ * @param {array} loaders An array of loaders to apply to the source file.
+ */
+module.exports = function(sourceFile, loaders) {
 
+    var allLoaders = [webpackCommon.HTML_LOADER];
     var testFilesPattern = 'src/**/*.test.js';
 
+    if (loaders) {
+        allLoaders.concat(loaders);
+    }
+
     // Return a new instance each time.
-    var finalOptions = {
+    var conf = {
 
         browsers: ['PhantomJS'],
-
-        frameworks: ['jasmine'],
 
         files: [
             // https://github.com/webpack/style-loader/issues/31
@@ -43,22 +46,7 @@ module.exports = function(options) {
             testFilesPattern
         ],
 
-        webpack: {
-            module: {
-                loaders: [{
-                    // Load HTML as javascript.
-                    test: /\.html$/,
-                    loader: 'html'
-                }]
-            },
-            resolve: {
-                alias: {}
-            }
-        },
-
-        webpackMiddleware: {
-            noInfo: false
-        },
+        frameworks: ['jasmine'],
 
         plugins: [
             karmaWebpackPlugin,
@@ -68,12 +56,29 @@ module.exports = function(options) {
 
         preprocessors: {},
 
-        reporters: ['progress']
+        reporters: [
+            'dots'
+        ],
+
+        webpack: {
+            module: {
+                loaders: allLoaders
+            },
+            resolve: {
+                alias: {
+                    'angular-test-context': path.join(
+                        __dirname, sourceFile)
+                }
+            }
+        },
+
+        webpackMiddleware: {
+            noInfo: true
+        }
+
     };
 
-    finalOptions.preprocessors[testFilesPattern] = ['webpack'];
+    conf.preprocessors[testFilesPattern] = ['webpack'];
 
-    extend(true, finalOptions, options);
-
-    return finalOptions;
+    return conf;
 };

@@ -10,11 +10,13 @@
 'use strict';
 
 //-------------------------------------
+// Module dependencies and variables
+//-------------------------------------
+
+var common = require('./webpack.common.js');
+
+//-------------------------------------
 // Module exports
 //-------------------------------------
 
-module.exports = require('./webpack.base.config.js')({
-    output: {
-        filename: 'AngularTestContext.min.js'
-    }
-});
+module.exports = common.distConfig('AngularTestContext.min.js');
