@@ -25,8 +25,9 @@ design pattern.
    
 ## Features
 
-* Compatible with CommonJS, AMD, and non-module build environments.
+* Compatible with Angular 1.2.x and beyond.
 * Can be used in other testing frameworks besides Jasmine and Mocha.
+* Compatible with CommonJS, AMD, and non-module build environments.
 
 ## Installation
 
@@ -108,8 +109,8 @@ AngularTestContext utility.
 If you haven't used the 
 [Page Object](https://code.google.com/p/selenium/wiki/PageObjects)
 design pattern for writing unit tests, I highly recommend it. It will transform
-your tests from being unwieldy and fragile, to being a well-managed suite of
-tests for your code.
+your tests from being unwieldy and fragile, to being a well-managed and robust
+suite of tests for your code.
 
 The main benefits are:
 
