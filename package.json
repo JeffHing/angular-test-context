@@ -1,51 +1,51 @@
 {
-    "name": "angular-test-context",
-    "main": "./src/AngularTestContext.js",
-    "version": "0.1.4",
-    "description": "Provides a simple API that implements core ngMock capabilities needed for unit testing.",
-    "keywords": [
-        "angular",
-        "directive",
-        "pageobject",
-        "test",
-        "unit",
-        "mock"
-    ],
-    "homepage": "https://github.com/JeffHing/angular-test-context",
-    "license": "MIT",
-    "author": {
-        "name": "Jeffrey Hing",
-        "email": "hingcruz@gmail.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/JeffHing/angular-test-context.git"
-    },
-    "dependencies": {},
-    "devDependencies": {
-        "angular": "1.2.x",
-        "eslint": "^0.23.0",
-        "eslint-loader": "^0.14.0",
-        "extend": "^2.0.1",
-        "html-loader": "^0.3.0",
-        "jquery": "^2.1.4",
-        "karma": "^0.12.31",
-        "karma-cli": "0.0.4",
-        "karma-coverage": "^0.4.2",
-        "karma-jasmine": "^0.3.5",
-        "karma-phantomjs-launcher": "^0.1.4",
-        "karma-webpack": "^1.5.1",
-        "path": "^0.11.14",
-        "phantomjs-polyfill": "0.0.1",
-        "rimraf": "^2.4.0",
-        "webpack": "^1.9.4"
-    },
-    "scripts": {
-        "dev": "karma start",
-        "test": "karma start --single-run",
-        "predist": "rimraf dist && mkdir dist",
-        "dist": "npm run test && npm run distNotMin && npm run distMin",
-        "distNotMin": "webpack --progress --config webpack.dist.config.js && karma start karma.dist.conf.js --single-run",
-        "distMin": "webpack -p --progress --config webpack.distMin.config.js && karma start karma.distMin.conf.js --single-run"
-    }
+  "name": "angular-test-context",
+  "main": "./src/AngularTestContext.js",
+  "version": "0.1.5",
+  "description": "Provides a simple API that implements core ngMock capabilities needed for unit testing.",
+  "keywords": [
+    "angular",
+    "directive",
+    "pageobject",
+    "test",
+    "unit",
+    "mock"
+  ],
+  "homepage": "https://github.com/JeffHing/angular-test-context",
+  "license": "MIT",
+  "author": {
+    "name": "Jeffrey Hing",
+    "email": "hingcruz@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JeffHing/angular-test-context.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "angular": "1.2.x",
+    "eslint": "^0.23.0",
+    "eslint-loader": "^0.14.0",
+    "extend": "^2.0.1",
+    "html-loader": "^0.3.0",
+    "jquery": "^2.1.4",
+    "karma": "^0.12.31",
+    "karma-cli": "0.0.4",
+    "karma-coverage": "^0.4.2",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-webpack": "^1.5.1",
+    "path": "^0.11.14",
+    "phantomjs-polyfill": "0.0.1",
+    "rimraf": "^2.4.0",
+    "webpack": "^1.9.4"
+  },
+  "scripts": {
+    "dev": "karma start",
+    "test": "karma start --single-run",
+    "predist": "rimraf dist && mkdir dist",
+    "dist": "npm run test && npm run distNotMin && npm run distMin",
+    "distNotMin": "webpack --progress --config webpack.dist.config.js && karma start karma.dist.conf.js --single-run",
+    "distMin": "webpack -p --progress --config webpack.distMin.config.js && karma start karma.distMin.conf.js --single-run"
+  }
 }
