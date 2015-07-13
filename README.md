@@ -101,7 +101,7 @@ testContext.inject(function($timer) {
 ## Page Object Design Pattern
 
 AngularTestContext's GitHub project contains a 
-[calculator directive example](https://github.com/JeffHing/angular-test-context/tree/master/src/calculator)
+[calculator directive example](https://github.com/JeffHing/angular-test-context/tree/master/src/calculatorDirective)
 for writing unit tests using the Page Object design pattern and the 
 AngularTestContext utility.
 
@@ -227,7 +227,7 @@ module.exports = CalculatorPageObject;
 //-------------------------------------
 
 var AngularTestContext = require('angular-test-context');
-var calculatorDirective = require('./calculator.directive');
+var calculatorDirective = require('./calculatorDirective');
 
 // Private model name.
 var MODEL = '_calculatorPageObject';

@@ -14,11 +14,11 @@
 module.exports = calculatorDirective;
 
 //-------------------------------------
-// Module dependencies and variables.
+// Module dependencies and variables
 //-------------------------------------
 
 // Template HTML
-var HTML = require('./calculator.directive.html');
+var HTML = require('./calculatorDirective.html');
 
 //-------------------------------------
 // Directive
