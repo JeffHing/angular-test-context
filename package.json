@@ -6,11 +6,10 @@
     "keywords": [
         "angular",
         "directive",
-        "pageObject",
-        "page object",
+        "pageobject",
         "test",
-        "unit test",
-        "ngMock"
+        "unit",
+        "mock"
     ],
     "homepage": "https://github.com/JeffHing/angular-test-context",
     "license": "MIT",
