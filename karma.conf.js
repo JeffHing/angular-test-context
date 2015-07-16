@@ -20,7 +20,7 @@ var webpackBase = require('./webpack.base');
 
 module.exports = function(config) {
     config.set(
-        karmaBase(webpackBase.library.source,
+        karmaBase(webpackBase.library.sourceFile,
             webpackBase.library.sourceLoaders)
     );
 };
