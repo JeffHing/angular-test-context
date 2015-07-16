@@ -11,8 +11,8 @@
 // Module dependencies and variables
 //-------------------------------------
 
-var common = require('./karma.common');
-var commonWebpack = require('./webpack.common');
+var karmaBase = require('./karma.base');
+var webpackBase = require('./webpack.base');
 
 //-------------------------------------
 // Module exports
@@ -20,8 +20,7 @@ var commonWebpack = require('./webpack.common');
 
 module.exports = function(config) {
     config.set(
-        common(commonWebpack.ANGULAR_TEST_CONTEXT_SOURCE, [
-            commonWebpack.ESLINT_LOADER
-        ])
+        karmaBase(webpackBase.library.source,
+            webpackBase.library.sourceLoaders)
     );
 };

@@ -13,7 +13,7 @@
 
 var path = require('path');
 var karmaWebpackPlugin = require('karma-webpack');
-var webpackCommon = require('./webpack.common');
+var webpackBase = require('./webpack.base');
 
 //-------------------------------------
 // Module exports
@@ -25,7 +25,7 @@ var webpackCommon = require('./webpack.common');
  */
 module.exports = function(sourceFile, loaders) {
 
-    var allLoaders = [webpackCommon.HTML_LOADER];
+    var allLoaders = [webpackBase.loaders.html];
     var testFilesPattern = 'src/**/*.test.js';
 
     if (loaders) {
@@ -65,10 +65,7 @@ module.exports = function(sourceFile, loaders) {
                 loaders: allLoaders
             },
             resolve: {
-                alias: {
-                    'angular-test-context': path.join(
-                        __dirname, sourceFile)
-                }
+                alias: {}
             }
         },
 
@@ -77,6 +74,9 @@ module.exports = function(sourceFile, loaders) {
         }
 
     };
+
+    conf.webpack.resolve.alias[webpackBase.library.projectName] =
+        path.join(__dirname, webpackBase.library.sourceFile);
 
     conf.preprocessors[testFilesPattern] = ['webpack'];
 

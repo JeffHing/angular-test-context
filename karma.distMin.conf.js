@@ -11,7 +11,8 @@
 // Module dependencies and variables
 //-------------------------------------
 
-var common = require('./karma.common');
+var karmaBase = require('./karma.base');
+var webpackBase = require('./webpack.base');
 
 //-------------------------------------
 // Module exports
@@ -19,6 +20,7 @@ var common = require('./karma.common');
 
 module.exports = function(config) {
     config.set(
-        common('dist/AngularTestContext.min.js')
+        karmaBase('dist/' + webpackBase.library.minFilename)
     );
 };
+

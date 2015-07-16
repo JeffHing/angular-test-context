@@ -26,7 +26,6 @@
     "angular": "1.2.x",
     "eslint": "^0.23.0",
     "eslint-loader": "^0.14.0",
-    "extend": "^2.0.1",
     "html-loader": "^0.3.0",
     "jquery": "^2.1.4",
     "karma": "^0.12.31",
