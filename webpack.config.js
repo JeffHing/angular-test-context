@@ -3,13 +3,15 @@
  *
  * MIT License
  *
- * Common webpack configuration values.
+ * Webpack configurations.
  */
 'use strict';
 
 //-------------------------------------
 // Module dependencies and variables
 //-------------------------------------
+
+var flags = require('minimist')(process.argv.slice(2));
 
 // Webpack loaders.
 var loaders = {
@@ -41,7 +43,7 @@ var library = {
     filename: 'AngularTestContext.js',
 
     // Filename of minimized library.
-    minFilename: 'AngularTestContext.min.js',
+    filenameMin: 'AngularTestContext.min.js',
 
     // Path to library source.
     sourceFile: './src/AngularTestContext.js',
@@ -52,8 +54,12 @@ var library = {
     ]
 };
 
-// Distribution configuration.
-var distConfig = function(outputName) {
+/*
+ * Creates a webpack distribution configuration.
+ *
+ * @param {string} libraryName
+ */
+function createDistConfig(libraryName) {
 
     return {
         entry: library.sourceFile,
@@ -67,20 +73,27 @@ var distConfig = function(outputName) {
         },
 
         output: {
-            filename: outputName,
+            filename: libraryName,
             library: library.variable,
             libraryTarget: 'umd',
             path: 'dist/'
         }
     };
-};
+}
 
 //-------------------------------------
 // Module exports
 //-------------------------------------
 
-module.exports = {
-    distConfig: distConfig,
-    library: library,
-    loaders: loaders
-};
+if (flags['#wdist']) {
+    module.exports = createDistConfig(library.filename);
+
+} else if (flags['#wdistMin']) {
+    module.exports = createDistConfig(library.filenameMin);
+
+} else {
+    module.exports = {
+        library: library,
+        loaders: loaders
+    };
+}
