@@ -112,7 +112,7 @@
         "no-path-concat": 2,
         "no-process-exit": 2,
         "no-restricted-modules": 2,
-        "no-sync": 2,
+        "no-sync": 0,
 
         "array-bracket-spacing": 2,
         "brace-style": 2,
@@ -143,7 +143,7 @@
         "no-spaced-func": 2,
         "no-ternary": 0,
         "no-trailing-spaces": 2,
-        "no-underscore-dangle": 2,
+        "no-underscore-dangle": 0,
         "one-var": 2,
         "operator-assignment": 2,
         "operator-linebreak": 2,
