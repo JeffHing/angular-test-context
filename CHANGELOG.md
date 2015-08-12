@@ -1,3 +1,7 @@
+### 0.1.6 (2015-08-12)
+* Normalize webpack and karma configuration across projects.
+* Update README.
+
 ### 0.1.5 (2015-07-12)
 * Normalize webpack and karma configurations across projects.
 * Normalize directive naming across projects.
