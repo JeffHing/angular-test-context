@@ -2,7 +2,7 @@
 
 # AngularTestContext
 
-AngularTestContext provides a simple API for core ngMock
+AngularTestContext provides a simple API that implements core ngMock
 capabilities needed for unit testing. Based upon your needs, it can replace 
 the need for ngMock, or it can be used in conjunction with ngMock.
 
