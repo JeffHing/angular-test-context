@@ -2,7 +2,7 @@
 
 # AngularTestContext
 
-AngularTestContext provides a simple API that implements core ngMock
+AngularTestContext provides a simplified API for core ngMock
 capabilities needed for unit testing. Based upon your needs, it can replace 
 the need for ngMock, or it can be used in conjunction with ngMock.
 
@@ -65,24 +65,24 @@ var testContext = new AngularTestContext('testApp');
 
 ### Compiling HTML with Scope Variables
 
-To compile the HTML to be tested, call the `compile()` method with the 
+To compile the HTML to be tested, call the `.compile()` method with the 
 appropriate HTML and any optional scope variables:
 
 ```javascript
 var scope = {
     data: {
-        value: 'hello',
+        value: 'hello'
     }
 };
 var element = testContext.compile('<div my-directive="data"></div>', scope);
 ```
 
-The `compile()` method returns the Angular wrapped DOM element, which can 
+The `.compile()` method returns the Angular wrapped DOM element, which can 
 then be inspected during your tests to validate the directive's behavior.
 
 ### Changing a Scope Value
 
-To change a scope value, modify the value, and then call the `digest()` method:
+To change a scope value, modify the value, and then call the `.digest()` method:
 
 ```javascript
 scope.data.value = 'goodbye';
@@ -91,7 +91,7 @@ testContext.digest();
 
 ### Injecting A Dependency
 
-To inject a dependency from one of the Angular modules, use the `inject()` method:
+To inject a dependency from one of the Angular modules, use the `.inject()` method:
 
 ```javascript
 testContext.inject(function($timer) {
@@ -109,8 +109,8 @@ AngularTestContext utility.
 If you haven't used the 
 [Page Object](https://code.google.com/p/selenium/wiki/PageObjects)
 design pattern for writing unit tests, I highly recommend it. It will transform
-your tests from being unwieldy and fragile, to being a well-managed and robust
-suite of tests for your code.
+your tests from being unwieldy and fragile, to being robust and easily
+maintained.
 
 The main benefits are:
 
@@ -138,7 +138,7 @@ logical calls against the calculator's Page Object.
 implement the calculator.
 
 **Note:** Abstracting out the underlying framework in your tests may not always
-be feasible, but it's a goal worth considering.
+be feasible, but it's a choice worth considering.
 
 
 ```javascript
