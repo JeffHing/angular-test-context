@@ -2,7 +2,7 @@
 
 # AngularTestContext
 
-AngularTestContext provides a simplified API for core ngMock
+AngularTestContext provides a simple API for core ngMock
 capabilities needed for unit testing. Based upon your needs, it can replace 
 the need for ngMock, or it can be used in conjunction with ngMock.
 
@@ -138,7 +138,7 @@ logical calls against the calculator's Page Object.
 implement the calculator.
 
 **Note:** Abstracting out the underlying framework in your tests may not always
-be feasible, but it's a choice worth considering.
+be feasible or desirable, but it's a choice worth considering.
 
 
 ```javascript
