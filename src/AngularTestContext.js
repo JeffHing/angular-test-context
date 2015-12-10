@@ -36,18 +36,21 @@ var MODEL = '_angularTestContext';
 function AngularTestContext() {
     var m = this[MODEL] = {};
     m.scope = null;
-    m.moduleDependencies = ['ng'];
+
+    var moduleDependencies = ['ng'];
 
     for (var i = 0; i < arguments.length; i++) {
         var arg = arguments[i];
         if (arg instanceof Array) {
             for (var j = 0; j < arg.length; j++) {
-                m.moduleDependencies.push(arg[j]);
+                moduleDependencies.push(arg[j]);
             }
         } else {
-            m.moduleDependencies.push(arg);
+            moduleDependencies.push(arg);
         }
     }
+
+    m.injector = angular.injector(moduleDependencies);
 }
 
 var proto = AngularTestContext.prototype;
@@ -101,5 +104,5 @@ proto.digest = function() {
  */
 proto.inject = function(func) {
     var m = this[MODEL];
-    angular.injector(m.moduleDependencies).invoke(func);
+    m.injector.invoke(func);
 };

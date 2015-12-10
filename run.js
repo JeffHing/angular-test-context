@@ -46,7 +46,7 @@ var webpackDistMinCmd = 'webpack -p --progress --#wdistMin';
 // Run build commands
 //-------------------------------------
 
-process.env.PATH += ';node_modules/.bin';
+process.env.PATH += ':node_modules/.bin';
 
 var queue = new CommandQueue();
 

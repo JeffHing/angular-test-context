@@ -1,3 +1,6 @@
+### 0.1.7 (2015-12-10)
+* Fix bug where inject() method is not injecting the same instance of the service.
+
 ### 0.1.6 (2015-08-12)
 * Normalize webpack and karma configuration across projects.
 * Update README.

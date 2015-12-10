@@ -79,7 +79,7 @@ describe('AngularTestContext:', function() {
     });
 
     //----------------------------------
-    // Module dependency tests
+    // Injection tests
     //----------------------------------
 
     describe('injecting function with a module dependency', function() {
@@ -120,6 +120,39 @@ describe('AngularTestContext:', function() {
         it('should have injected the dependency', function() {
             expect(injectedMile.feet).toBe(5280);
             expect(injectedYard.feet).toBe(3);
+        });
+    });
+
+    describe('injecting $timeout', function() {
+
+        var controllerTimeout;
+
+        function fooDirective() {
+
+            return {
+                controller: Controller,
+                controllerAs: 'ctrl',
+                restrict: 'EA',
+                scope: {}
+            };
+
+            function Controller($timeout) {
+                controllerTimeout = $timeout;
+            }
+        }
+
+        angular.module('testApp', []).directive('foo', fooDirective);
+
+        var testContext = new AngularTestContext(['ng', 'testApp']);
+        testContext.compile('<foo></foo>');
+
+        it('should always be the same $timeout instance', function() {
+            var timeout;
+            testContext.inject(function($timeout) {
+                timeout = $timeout;
+            });
+
+            expect(controllerTimeout).toBe(timeout);
         });
     });
 });

@@ -2,7 +2,7 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define(factory);
+		define([], factory);
 	else if(typeof exports === 'object')
 		exports["AngularTestContext"] = factory();
 	else
@@ -92,18 +92,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	function AngularTestContext() {
 	    var m = this[MODEL] = {};
 	    m.scope = null;
-	    m.moduleDependencies = ['ng'];
+
+	    var moduleDependencies = ['ng'];
 
 	    for (var i = 0; i < arguments.length; i++) {
 	        var arg = arguments[i];
 	        if (arg instanceof Array) {
 	            for (var j = 0; j < arg.length; j++) {
-	                m.moduleDependencies.push(arg[j]);
+	                moduleDependencies.push(arg[j]);
 	            }
 	        } else {
-	            m.moduleDependencies.push(arg);
+	            moduleDependencies.push(arg);
 	        }
 	    }
+
+	    m.injector = angular.injector(moduleDependencies);
 	}
 
 	var proto = AngularTestContext.prototype;
@@ -157,7 +160,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 	proto.inject = function(func) {
 	    var m = this[MODEL];
-	    angular.injector(m.moduleDependencies).invoke(func);
+	    m.injector.invoke(func);
 	};
 
 

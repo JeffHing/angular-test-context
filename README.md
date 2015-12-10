@@ -94,7 +94,7 @@ testContext.digest();
 To inject a dependency from one of the Angular modules, use the `.inject()` method:
 
 ```javascript
-testContext.inject(function($timer) {
+testContext.inject(function($timeout) {
     ...
 });
 
