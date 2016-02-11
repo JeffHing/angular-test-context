@@ -1,3 +1,7 @@
+
+### 0.1.8 (2016-2-11)
+* Provide a method to return the actual angular scope object used to compile.
+
 ### 0.1.7 (2015-12-10)
 * Fix bug where inject() method is not injecting the same instance of the service.
 

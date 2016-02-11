@@ -76,6 +76,11 @@ describe('AngularTestContext:', function() {
 
             expect(inputEl.val()).toBe('goodbye');
         });
+
+        it('should provide the angular scope object used for compile', function() {
+            expect(testContext.scope().formData).toBe(scope.formData);
+            expect(testContext.scope().$emit).not.toBeNull();
+        });
     });
 
     //----------------------------------

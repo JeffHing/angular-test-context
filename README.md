@@ -89,6 +89,14 @@ scope.data.value = 'goodbye';
 testContext.digest();
 ```
 
+Alternatively, you can access the Angular scope object used to compile the
+HTML, using the `.scope()` method:
+
+```javascript
+scope.data.value = 'goodbye';
+testContext.scope().$digest();
+```
+
 ### Injecting A Dependency
 
 To inject a dependency from one of the Angular modules, use the `.inject()` method:

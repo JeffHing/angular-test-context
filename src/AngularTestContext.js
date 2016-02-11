@@ -90,6 +90,16 @@ proto.compile = function(html, scopeProperties) {
 };
 
 /*
+ * Return the angular scope object used to compile the HTML.
+ *
+ * @return {object} scope
+ */
+proto.scope = function() {
+    var m = this[MODEL];
+    return m.scope;
+};
+
+/*
  * Executes a digest cycle on the current scope.
  */
 proto.digest = function() {
