@@ -173,6 +173,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	    m.injector.invoke(func);
 	};
 
+	/*
+	 * Instantiates a new instance and injects any specified module dependencies.
+	 *
+	 * @param {function} constructor
+	 */
+	proto.instantiate = function(constructor) {
+	    var m = this[MODEL];
+	    return m.injector.instantiate(constructor);
+	};
+
 
 /***/ }
 /******/ ])

@@ -1,4 +1,7 @@
 
+### 0.1.9 (2016-2-11)
+* Expose the injector's instantiate method so that controllers can be injected with dependencies.
+
 ### 0.1.8 (2016-2-11)
 * Provide a method to return the actual angular scope object used to compile.
 

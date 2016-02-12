@@ -99,7 +99,7 @@ testContext.scope().$digest();
 
 ### Injecting A Dependency
 
-To inject a dependency from one of the Angular modules, use the `.inject()` method:
+To inject a dependency into a function, use the `.inject()` method:
 
 ```javascript
 testContext.inject(function($timeout) {
@@ -107,6 +107,19 @@ testContext.inject(function($timeout) {
 });
 
 ```
+
+To inject a dependency into a constructor, use the `.instantiate()` method:
+
+```javascript
+
+function MyController($timeout) {
+    ...
+}
+
+var controller = testContext.instantiate(MyController);
+
+```
+
 ## Page Object Design Pattern
 
 AngularTestContext's GitHub project contains a 

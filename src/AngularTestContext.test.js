@@ -105,6 +105,29 @@ describe('AngularTestContext:', function() {
         });
     });
 
+    describe('injecting constructor with a module dependency', function() {
+        angular.module('mileMeasurement', []).constant('mile', {
+            feet: 5280
+        });
+
+        var testContext = new AngularTestContext('mileMeasurement');
+
+        function MyController(mile) {
+            var injectedMile = mile;
+
+            this.mile = function() {
+                return injectedMile;
+            }
+        }
+
+        // Can't use jasmine spy with angular injection.
+        var controller = testContext.instantiate(MyController);
+
+        it('should have injected the dependency', function() {
+            expect(controller.mile().feet).toBe(5280);
+        });
+    });
+
     describe('injecting function with a module dependency using array', function() {
         angular.module('yardMeasurement', []).constant('yard', {
             feet: 3
