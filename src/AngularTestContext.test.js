@@ -83,6 +83,32 @@ describe('AngularTestContext:', function() {
         });
     });
 
+    describe('compiling and instantiating methods', function() {
+
+        var HTML =
+            '<input type="text" ng-model="formData.textValue"/>';
+
+        var scope = {
+            formData: {
+                textValue: 'hello'
+            }
+        };
+
+        var testContext = new AngularTestContext();
+
+        it('should use the same scope object', function() {
+            var controllerScope;
+
+            var inputEl = testContext.compile(HTML, scope);
+            expect(inputEl.val()).toBe('hello');
+
+            var instance = testContext.instantiate(function($scope) {
+                controllerScope = $scope;
+            });
+            expect(controllerScope.formData.textValue).toBe('hello');
+        });
+    });
+
     //----------------------------------
     // Injection tests
     //----------------------------------

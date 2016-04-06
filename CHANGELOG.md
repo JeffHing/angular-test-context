@@ -1,3 +1,6 @@
+### 0.1.10 (2016-4-5)
+* Support injecting $scope into constructor when using the instantiate method.
+* Ensure instantiate() and compile() use the same scope object.
 
 ### 0.1.9 (2016-2-11)
 * Expose the injector's instantiate method so that controllers can be injected with dependencies.

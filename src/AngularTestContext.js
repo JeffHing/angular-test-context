@@ -64,13 +64,14 @@ var proto = AngularTestContext.prototype;
  * @return {object} The root element of the compiled HTML.
  */
 proto.compile = function(html, scopeProperties) {
-    var m = this[MODEL],
-        element;
+    var element = null;
+    var tc = this;
 
     compileHtml.$inject = ['$compile', '$rootScope'];
 
-    function compileHtml($compile, $rootScope) {
-        var scope = $rootScope.$new();
+    function compileHtml($compile) {
+
+        var scope = tc.scope();
 
         // Add the properties to the current scope.
         if (scopeProperties) {
@@ -80,8 +81,6 @@ proto.compile = function(html, scopeProperties) {
         // Compile the HTML against the scope.
         element = $compile(html)(scope);
         scope.$digest();
-
-        m.scope = scope;
     }
 
     this.inject(compileHtml);
@@ -96,6 +95,11 @@ proto.compile = function(html, scopeProperties) {
  */
 proto.scope = function() {
     var m = this[MODEL];
+    if (!m.scope) {
+        this.inject(function($rootScope) {
+            m.scope = $rootScope.$new();
+        });
+    }
     return m.scope;
 };
 
@@ -103,8 +107,7 @@ proto.scope = function() {
  * Executes a digest cycle on the current scope.
  */
 proto.digest = function() {
-    var m = this[MODEL];
-    m.scope.$digest();
+    this.scope().$digest();
 };
 
 /*
@@ -124,5 +127,5 @@ proto.inject = function(func) {
  */
 proto.instantiate = function(constructor) {
     var m = this[MODEL];
-    return m.injector.instantiate(constructor);
+    return m.injector.instantiate(constructor, {'$scope': this.scope()});
 };
